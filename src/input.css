@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: norse-bold;
+    src: url(../src/assets/Norse-Bold.otf);
+    font-display: swap;
+}
