@@ -1,5 +1,25 @@
 {
+  "name": "signupform",
+  "description": "Sign up to The Odin Project!",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Godnoken/signupform.git"
+  },
+  "author": "Sebastian Öjefors <sebastian.ojefors@gmail.com> (https://github.com/Godnoken)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Godnoken/signupform/issues"
+  },
+  "homepage": "https://github.com/Godnoken/signupform#readme",
   "devDependencies": {
     "tailwindcss": "^3.0.23"
+  },
+  "dependencies": {
+
   }
 }
