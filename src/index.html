@@ -55,41 +55,39 @@
                 <form class="h-full py-8 flex flex-col justify-between items-center
                 text-[2.8vw]" id="form" method="post" action="#" novalidate>
                     <label class="label">FIRST NAME
-                        <input class="input inputValid" type="text" id="firstName"
-                            name="firstName" placeholder=" " required>
-                            <p class="error invisible">Please provide a first name</p>
+                        <input class="input inputValid" type="text" id="firstName" name="firstName" placeholder=" "
+                            required>
+                        <p class="error invisible">Please provide a first name</p>
                     </label>
                     <label class="label">LAST NAME
-                        <input class="input inputValid" type="text" id="lastName" name="lastName"
-                            placeholder=" " required>
-                            <p class="error invisible">Please provide a last name</p>
+                        <input class="input inputValid" type="text" id="lastName" name="lastName" placeholder=" "
+                            required>
+                        <p class="error invisible">Please provide a last name</p>
                     </label>
                     <label class="label">EMAIL
-                        <input class="input inputValid" type="email" id="email" name="email"
-                            placeholder=" "required>
-                            <p class="error invisible">Please provide a
+                        <input class="input inputValid" type="email" id="email" name="email" placeholder=" " required>
+                        <p class="error invisible">Please provide a
                             valid email</p>
                     </label>
                     <label class="label">PHONE NUMBER (optional)
-                        <input class="input" type="tel" id="phoneNumber"
-                        name="phoneNumber">
+                        <input class="input" type="tel" id="phoneNumber" name="phoneNumber">
                         <p class="error invisible">Invalid phone number</p>
                     </label>
                     <label class="label">PASSWORD
                         <input class="input inputValid" type="password" id="password" name="password" minlength="8"
                             placeholder=" " required>
-                            <p class="error invisible">s</p>
+                        <p class="error invisible">s</p>
                     </label>
                     <label class="label">CONFIRM PASSWORD
                         <input class="input inputValid" type="password" id="confirmPassword" name="confirmPassword"
                             minlength="8" placeholder=" " required>
-                            <p class="error invisible" id="passwordError">Passwords do not match</p>
+                        <p class="text-[2.6vw] text-[#970076] bg:text-[#ff46d7] inline-block" id="passwordErrorLength">Minimum 8 characters</p>
+                        <p class="text-[2.6vw] text-[#970076] bg:text-[#ff46d7]" id="passwordErrorMatch">Password must match</p>
                     </label>
                     <button class="h-[3.4vh] w-[24vw] bg-slate-900 rounded
                     text-white text-[3vw] dark:bg-[#f8f8ff] dark:text-black">Join!</button>
                     <p class="text-center text-[2vw]">Already have an account? Login
-                        <a class="text-[#970076] cursor-pointer dark:text-[#ff46d7]"
-                        href="#formContainer">here.</a>
+                        <a class="text-[#970076] cursor-pointer dark:text-[#ff46d7]" href="#formContainer">here.</a>
                     </p>
                 </form>
             </div>

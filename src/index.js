@@ -4,7 +4,8 @@ const formInputs = Array.from(document.querySelectorAll(".input")).slice(0, 4);
 const password = document.querySelector("#password");
 const confirmPassword = document.querySelector("#confirmPassword");
 const passwordInputs = Array.from([password, confirmPassword]);
-const passwordError = document.querySelector("#passwordError");
+const passwordErrorLength = document.querySelector("#passwordErrorLength");
+const passwordErrorMatch = document.querySelector("#passwordErrorMatch");
 
 
 form.addEventListener("submit", validateForm);
@@ -29,6 +30,8 @@ function validateForm(event) {
             else {
                 input.classList.add("border-red-600");
                 input.classList.remove("border-green-600");
+                input.nextElementSibling.classList.add("visible");
+                input.nextElementSibling.classList.remove("invisible");
             }
         })
 
@@ -66,15 +69,24 @@ function validateOnChange(event) {
 
 
 function validatePasswordOnInput() {
-    if (password.value === confirmPassword.value && password.value.length >= 8) {
-        password.classList.add("border-green-600");
-        confirmPassword.classList.add("border-green-600");
-        password.classList.remove("border-red-600");
-        confirmPassword.classList.remove("border-red-600");
-        passwordError.classList.remove("visible");
-        passwordError.classList.add("invisible");
-        return true;
-    }
+
+        if (password.value === confirmPassword.value && password.value.length >= 8) {
+            password.classList.add("border-green-600");
+            confirmPassword.classList.add("border-green-600");
+            password.classList.remove("border-red-600");
+            confirmPassword.classList.remove("border-red-600");
+            passwordErrorLength.classList.add("text-green-600");
+            passwordErrorMatch.classList.add("text-green-600");
+            return true;
+        }
+    
+        if (password.value === confirmPassword.value && password.value.length !== 0) {
+            passwordErrorMatch.classList.add("text-green-600");
+        }
+        else if (password.value.length >= 8) {
+            passwordErrorLength.classList.add("text-green-600");
+        }
+    
 }
 
 function validatePasswordOnChange() {
@@ -83,15 +95,18 @@ function validatePasswordOnChange() {
         confirmPassword.classList.add("border-red-600");
         password.classList.remove("border-green-600");
         confirmPassword.classList.remove("border-green-600");
-        passwordError.classList.add("visible");
-        passwordError.classList.remove("invisible");
-        passwordError.textContent = "Password does not match and is less than 8 characters long";
+        passwordErrorLength.classList.add("text-red-600");
+        passwordErrorMatch.classList.add("text-red-600");
+        passwordErrorLength.classList.remove("text-green-600");
+        passwordErrorMatch.classList.remove("text-green-600");
 
         if (password.value !== confirmPassword.value && password.value.length >= 8) {
-            passwordError.textContent = "Password does not match";
+            passwordErrorLength.classList.remove("text-red-600");
+            passwordErrorLength.classList.add("text-green-600");
         }
-        else if (password.value === confirmPassword.value && password.value.length < 8) {
-            passwordError.textContent = "Password is less than 8 characters long"
+        else if (password.value === confirmPassword.value && password.value.length < 8 && password.value.length !== 0) {
+            passwordErrorMatch.classList.remove("text-red-600");
+            passwordErrorMatch.classList.add("text-green-600");
         }
     }
 }
