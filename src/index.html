@@ -7,15 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sign up to The Odin Project!">
     <title>Sign Up</title>
-    <link rel="preload" href="../src/assets/Norse-Bold.otf" as="font"
-    type="font/otf" crossorigin>
+    <link rel="preload" href="../src/assets/Norse-Bold.otf" as="font" type="font/otf" crossorigin>
     <link rel="stylesheet" href="../dist/output.css">
 </head>
 
-<body class="bg-[#f8f8ff] font-mono">
+<body class="bg-[#f8f8ff] font-mono dark:bg-black dark:text-white">
 
     <header class="h-screen flex flex-col items-center justify-evenly">
-        <svg class="w-1/2 fill-black" viewBox="0 0 210 297" xmlns="http://www.w3.org/2000/svg">
+        <svg class="w-1/2 fill-black dark:fill-[#f8f8ff]" viewBox="0 0 210 297" xmlns="http://www.w3.org/2000/svg">
             <path style="stroke-width:.548113" d="m82 277-21-11 1-3
         1-2-11-8c-11-8-11-7-10-13l1-3-10-21-10-22 8-30 7-30v-23l-9-9-9-9-10-39L0
         13v-3h2c2 0 7 2 22 10l19 10v17c0 10 0 18 1 17a124 124 0 0 1 112-3l7
@@ -47,38 +46,53 @@
                 </p>
                 <p>
                     What are you waiting
-                    for?<br>Join the ranks <a href="#formContainer" class="italic text-[#970076] cursor-pointer">now.</a>
+                    for?<br>Join the ranks <a href="#formContainer"
+                        class="italic text-[#970076] cursor-pointer dark:text-[#ff46d7]">now.</a>
                 </p>
             </div>
             <div id="formContainer" class="h-screen flex flex-col justify-evenly">
-                <form class="h-3/4 flex flex-col justify-evenly items-center"
-                method="post">
+                <form class="h-3/4 flex flex-col justify-evenly items-center" method="post">
                     <label class="text-[2.8vw]">FIRST NAME
-                        <input class="block h-[3.6vh] border-stone-900 border-2" type="text" id="firstName">
+                        <input class="block h-[3.6vh] p-1 rounded border-[1px]
+                        border-stone-900 dark:bg-black dark:border-stone-100" type="text"
+                        id="firstName">
                     </label>
                     <label class="text-[2.8vw]">LAST NAME
-                        <input class="block h-[3.6vh] border-stone-900 border-2" type="text" id="lastName">
+                        <input class="block h-[3.6vh] p-1 rounded border-[1px]
+                        border-stone-900 dark:bg-black dark:border-stone-100"
+                            type="text" id="lastName">
                     </label>
                     <label class="text-[2.8vw]">EMAIL
-                        <input class="block h-[3.6vh] border-stone-900 border-2" type="email" id="email">
+                        <input class="block h-[3.6vh] p-1 rounded border-[1px]
+                        border-stone-900 dark:bg-black dark:border-stone-100"
+                            type="email" id="email">
                     </label>
                     <label class="text-[2.8vw]">PHONE NUMBER
-                        <input class="block h-[3.6vh] border-stone-900 border-2" type="tel" id="phoneNumber">
+                        <input class="block h-[3.6vh] p-1 rounded border-[1px]
+                        border-stone-900 dark:bg-black dark:border-stone-100" type="tel" id="phoneNumber">
                     </label>
                     <label class="text-[2.8vw]">PASSWORD
-                        <input class="block h-[3.6vh] border-stone-900 border-2" type="password" id="password">
+                        <input class="block h-[3.6vh] p-1 rounded border-[1px]
+                        border-stone-900 dark:bg-black dark:border-stone-100"
+                            type="password" id="password">
                     </label>
                     <label class="text-[2.8vw]">CONFIRM PASSWORD
-                        <input class="block h-[3.6vh] border-stone-900 border-2" type="password" id="confirmPassword">
+                        <input class="block h-[3.6vh] p-1 rounded border-[1px]
+                        border-stone-900 dark:bg-black dark:border-stone-100"
+                            type="password" id="confirmPassword">
                     </label>
-                    <button class="h-[5vh] w-[24vw] bg-slate-900 rounded text-white text-[3vw]">Join!</button>
+                    <button
+                        class="h-[5vh] w-[24vw] bg-slate-900 rounded
+                    text-white text-[3vw] dark:bg-[#f8f8ff] dark:text-black dark:border-stone-100 dark:bg-black">Join!</button>
                 </form>
                 <p class="text-center">Already have an account? Login <a
-                class="text-[#970076] cursor-pointer" href="#formContainer">here.</a></p>
+                class="text-[#970076] cursor-pointer dark:text-[#ff46d7]"
+                        href="#formContainer">here.</a></p>
             </div>
         </div>
     </main>
-    <footer class="h-[10vh] flex justify-center items-center text-white text-[3.4vw] bg-slate-700">
+    <footer class="h-[10vh] flex justify-center items-center text-white
+    text-[3.4vw] bg-slate-700 dark:bg-[#f8f8ff] dark:text-black">
         <p>Copyright &#169; 865 Valhalla. All rights drank.</p>
     </footer>
 
