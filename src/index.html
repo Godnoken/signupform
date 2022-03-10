@@ -9,6 +9,7 @@
     <title>Sign Up</title>
     <link rel="preload" href="../src/assets/Norse-Bold.otf" as="font" type="font/otf" crossorigin>
     <link rel="stylesheet" href="../dist/output.css">
+    <script src="index.js" defer></script>
 </head>
 
 <body class="bg-[#f8f8ff] font-mono dark:bg-black dark:text-white">
@@ -51,34 +52,39 @@
                 </p>
             </div>
             <div id="formContainer" class="h-screen flex flex-col justify-evenly">
-                <form class="h-3/4 flex flex-col justify-evenly items-center text-[2.8vw]" method="post">
-                    <label>FIRST NAME
-                        <input class="input" type="text" id="firstName" name="firstName">
+                <form class="h-3/4 flex flex-col justify-evenly items-center
+                text-[2.8vw]" id="form" method="post" action="#" novalidate>
+                    <label class="label">FIRST NAME
+                        <input class="input inputValid" type="text" id="firstName"
+                            name="firstName" placeholder=" " required>
                     </label>
-                    <label>LAST NAME
-                        <input class="input" type="text" id="lastName" name="lastName">
+                    <label class="label">LAST NAME
+                        <input class="input inputValid" type="text" id="lastName" name="lastName"
+                            placeholder=" " required>
                     </label>
-                    <label>EMAIL
-                        <input class="input" type="email" id="email"
-                        name="email" required>
+                    <label class="label">EMAIL
+                        <input class="input inputValid" type="email" id="email" name="email"
+                            placeholder=" "required>
                     </label>
-                    <label>PHONE NUMBER
-                        <input class="input" type="tel" id="phoneNumber" name="phoneNumber">
+                    <label class="label">PHONE NUMBER
+                        <input class="input" type="tel" id="phoneNumber"
+                        name="phoneNumber">
                     </label>
-                    <label>PASSWORD
-                        <input class="input" type="password" id="password"
-                        name="password" minlength="8" required>
+                    <label class="label">PASSWORD
+                        <input class="input inputValid" type="password" id="password" name="password" minlength="8"
+                            placeholder=" " required>
                     </label>
-                    <label>CONFIRM PASSWORD
-                        <input class="input" type="password"
-                        id="confirmPassword" name="confirmPassword"
-                        minlength="8" required>
+                    <label class="label">CONFIRM PASSWORD
+                        <input class="input inputValid" type="password" id="confirmPassword" name="confirmPassword"
+                            minlength="8" placeholder=" " required>
                     </label>
                     <button class="h-[5vh] w-[24vw] bg-slate-900 rounded
                     text-white text-[3vw] dark:bg-[#f8f8ff] dark:text-black">Join!</button>
                 </form>
-                <p class="text-center">Already have an account? Login <a
-                        class="text-[#970076] cursor-pointer dark:text-[#ff46d7]" href="#formContainer">here.</a></p>
+                <p class="text-center">Already have an account? Login
+                    <a class="text-[#970076] cursor-pointer dark:text-[#ff46d7]"
+                    href="#formContainer">here.</a>
+                </p>
             </div>
         </div>
     </main>
