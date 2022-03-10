@@ -7,3 +7,12 @@
     src: url(../src/assets/Norse-Bold.otf);
     font-display: swap;
 }
+
+
+@layer components {
+    .input {
+        @apply mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200
+        focus:ring-0 bg-[#f8f8ff] text-[#970076] focus:border-[#970076] dark:text-[#ff46d7] dark:focus:border-[#ff46d7]
+        dark:bg-black
+    }
+}
