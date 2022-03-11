@@ -1,4 +1,3 @@
-
 const form = document.querySelector("#form");
 const formInputs = Array.from(document.querySelectorAll(".input")).slice(0, 4);
 const password = document.querySelector("#password");
@@ -7,6 +6,9 @@ const passwordInputs = Array.from([password, confirmPassword]);
 const passwordErrorLength = document.querySelector("#passwordErrorLength");
 const passwordErrorMatch = document.querySelector("#passwordErrorMatch");
 
+
+const viewport = document.querySelector("meta[name=viewport]");
+viewport.setAttribute("content", viewport.content + ", height=" + window.innerHeight);
 
 form.addEventListener("submit", validateForm);
 formInputs.forEach(input => input.addEventListener("change", validateOnChange));
@@ -70,23 +72,23 @@ function validateOnChange(event) {
 
 function validatePasswordOnInput() {
 
-        if (password.value === confirmPassword.value && password.value.length >= 8) {
-            password.classList.add("border-green-600");
-            confirmPassword.classList.add("border-green-600");
-            password.classList.remove("border-red-600");
-            confirmPassword.classList.remove("border-red-600");
-            passwordErrorLength.classList.add("text-green-600");
-            passwordErrorMatch.classList.add("text-green-600");
-            return true;
-        }
-    
-        if (password.value === confirmPassword.value && password.value.length !== 0) {
-            passwordErrorMatch.classList.add("text-green-600");
-        }
-        else if (password.value.length >= 8) {
-            passwordErrorLength.classList.add("text-green-600");
-        }
-    
+    if (password.value === confirmPassword.value && password.value.length >= 8) {
+        password.classList.add("border-green-600");
+        confirmPassword.classList.add("border-green-600");
+        password.classList.remove("border-red-600");
+        confirmPassword.classList.remove("border-red-600");
+        passwordErrorLength.classList.add("text-green-600");
+        passwordErrorMatch.classList.add("text-green-600");
+        return true;
+    }
+
+    if (password.value === confirmPassword.value && password.value.length !== 0) {
+        passwordErrorMatch.classList.add("text-green-600");
+    }
+    else if (password.value.length >= 8) {
+        passwordErrorLength.classList.add("text-green-600");
+    }
+
 }
 
 function validatePasswordOnChange() {
