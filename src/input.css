@@ -22,4 +22,18 @@
     .error {
         @apply text-red-600 text-formError h-0
     }
+
+    .h1 {
+        overflow: hidden;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% 200%;
+        background-position: 0%;
+        transition: background-position 0.75s;
+    }
+
+    .h1:hover {
+        background-position: -100% 0%;
+    }
 }
