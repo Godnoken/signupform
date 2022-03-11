@@ -12,7 +12,7 @@
     <script src="src/index.js" defer></script>
 </head>
 
-<body class="bg-[#f8f8ff] font-mono dark:bg-black dark:text-white">
+<body class="bg-[#f8f8ff] font-mono dark:bg-black dark:text-white transition-colors duration-300">
     <svg class="fixed w-[6vw] h-[6vw] right-3 top-3 cursor-pointer
     hover:fill-stone-500 dark:fill-[#f8f8ff] dark:hover:fill-[#d1d1d1]" id="darkLightSwitch"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 472.1 472.1"
@@ -95,7 +95,7 @@
                         <p class="text-[2.6vw] text-[#970076] dark:text-[#ff46d7] inline-block" id="passwordErrorLength">Minimum 8 characters</p>
                         <p class="text-[2.6vw] text-[#970076] dark:text-[#ff46d7]" id="passwordErrorMatch">Password must match</p>
                     </label>
-                    <button class="h-[3.4vh] w-[24vw] bg-slate-900 rounded
+                    <button class="h-[3.4vh] w-[24vw] select-none bg-slate-900 rounded
                     text-white text-[3vw] dark:bg-[#f8f8ff] dark:text-black">Join!</button>
                     <p class="text-center text-[2vw]">Already have an account? Login
                         <a class="text-[#970076] cursor-pointer dark:text-[#ff46d7]" href="#formContainer">here.</a>

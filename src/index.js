@@ -1,5 +1,6 @@
 const form = document.querySelector("#form");
-const formInputs = Array.from(document.querySelectorAll(".input")).slice(0, 4);
+const formInputs = document.querySelectorAll(".input")
+const nonPasswordInputs = Array.from(formInputs).slice(0, 4);
 const password = document.querySelector("#password");
 const confirmPassword = document.querySelector("#confirmPassword");
 const passwordInputs = Array.from([password, confirmPassword]);
@@ -13,8 +14,8 @@ const viewport = document.querySelector("meta[name=viewport]");
 viewport.setAttribute("content", viewport.content + ", height=" + window.innerHeight);
 
 form.addEventListener("submit", validateForm);
-formInputs.forEach(input => input.addEventListener("change", validateOnChange));
-formInputs.forEach(input => input.addEventListener("input", validateOnInput));
+nonPasswordInputs.forEach(input => input.addEventListener("change", validateOnChange));
+nonPasswordInputs.forEach(input => input.addEventListener("input", validateOnInput));
 passwordInputs.forEach(input => input.addEventListener("input", validatePasswordOnInput));
 passwordInputs.forEach(input => input.addEventListener("change", validatePasswordOnChange));
 darkLightSwitch.addEventListener("click", switchPreferenceMode);
@@ -27,7 +28,7 @@ function validateForm(event) {
     else {
         event.preventDefault();
 
-        formInputs.forEach(input => {
+        nonPasswordInputs.forEach(input => {
             if (input.checkValidity()) {
                 input.classList.add("border-green-600");
                 input.classList.remove("border-red-600");
@@ -74,22 +75,20 @@ function validateOnChange(event) {
 
 
 function validatePasswordOnInput() {
-
     if (password.value === confirmPassword.value && password.value.length >= 8) {
         password.classList.add("border-green-600");
         confirmPassword.classList.add("border-green-600");
         password.classList.remove("border-red-600");
         confirmPassword.classList.remove("border-red-600");
-        passwordErrorLength.classList.add("text-green-600");
-        passwordErrorMatch.classList.add("text-green-600");
+        passwordErrorLength.style.color = "#16A34A";
+        passwordErrorMatch.style.color = "#16A34A";
         return true;
     }
-
-    if (password.value === confirmPassword.value && password.value.length !== 0) {
-        passwordErrorMatch.classList.add("text-green-600");
+    else if (password.value === confirmPassword.value && password.value.length !== 0) {
+        passwordErrorMatch.style.color = "#16A34A";
     }
     else if (password.value.length >= 8) {
-        passwordErrorLength.classList.add("text-green-600");
+        passwordErrorLength.style.color = "#16A34A";
     }
 
 }
@@ -100,18 +99,14 @@ function validatePasswordOnChange() {
         confirmPassword.classList.add("border-red-600");
         password.classList.remove("border-green-600");
         confirmPassword.classList.remove("border-green-600");
-        passwordErrorLength.classList.add("text-red-600");
-        passwordErrorMatch.classList.add("text-red-600");
-        passwordErrorLength.classList.remove("text-green-600");
-        passwordErrorMatch.classList.remove("text-green-600");
+        passwordErrorLength.style.color = "#DC2626";
+        passwordErrorMatch.style.color = "#DC2626";
 
         if (password.value !== confirmPassword.value && password.value.length >= 8) {
-            passwordErrorLength.classList.remove("text-red-600");
-            passwordErrorLength.classList.add("text-green-600");
+            passwordErrorLength.style.color = "#16A34A";
         }
         else if (password.value === confirmPassword.value && password.value.length < 8 && password.value.length !== 0) {
-            passwordErrorMatch.classList.remove("text-red-600");
-            passwordErrorMatch.classList.add("text-green-600");
+            passwordErrorMatch.style.color = "#16A34A";
         }
     }
 }
@@ -120,6 +115,31 @@ function validatePasswordOnChange() {
 function switchPreferenceMode() {
     const html = document.documentElement;
 
-    if (html.classList.contains("dark")) html.classList.toggle("dark");
-    else html.classList.toggle("dark");
+    if (html.classList.contains("dark")) {
+        html.classList.toggle("dark");
+        window.localStorage.setItem("theme", "light");
+        addCssProperties("#f8f8ff", "#970076");
+    }
+    else {
+        html.classList.toggle("dark");
+        window.localStorage.setItem("theme", "dark");
+        addCssProperties("black", "#ff46d7");
+    }
+}
+
+
+if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  document.documentElement.classList.add('dark')
+  addCssProperties("black", "#ff46d7");
+
+} else {
+  document.documentElement.classList.remove('dark')
+  addCssProperties("#f8f8ff", "#970076");
+}
+
+function addCssProperties(shadowColor, fillColor) {
+    formInputs.forEach(input => {
+        input.style.setProperty("box-shadow", `0 0 0 30px ${shadowColor} inset`)
+        input.style.setProperty("-webkit-text-fill-color", fillColor);
+    });
 }
