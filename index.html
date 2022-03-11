@@ -12,7 +12,8 @@
     <script src="src/index.js" defer></script>
 </head>
 
-<body class="bg-[#f8f8ff] font-mono dark:bg-black dark:text-white transition-colors duration-300">
+<body class="bg-[#f8f8ff] font-mono dark:bg-black dark:text-white
+transition-colors duration-300 lg:flex">
     <svg class="fixed w-[6vw] h-[6vw] right-3 top-3 cursor-pointer
     hover:fill-stone-500 dark:fill-[#f8f8ff] dark:hover:fill-[#d1d1d1]" id="darkLightSwitch"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 472.1 472.1"
@@ -24,7 +25,8 @@
     24 57l-25 75 75-25c17 11 36 19 57 24l35 70 35-70c21-5 40-13 57-24l75
     25-25-75c11-17 19-36 24-57zM236 375a139 139 0 1 1 0-279 139 139 0 0 1 0
     279z"/></svg>
-    <header class="h-screen flex flex-col items-center justify-evenly select-none">
+    <header class="h-screen flex flex-col items-center justify-evenly
+    select-none lg:w-full lg:h-[90vh]">
         <svg class="w-1/2 fill-black dark:fill-[#f8f8ff]" viewBox="0 0 210 297" xmlns="http://www.w3.org/2000/svg">
             <path style="stroke-width:.548113" d="m82 277-21-11 1-3
         1-2-11-8c-11-8-11-7-10-13l1-3-10-21-10-22 8-30 7-30v-23l-9-9-9-9-10-39L0
@@ -45,12 +47,13 @@
         13l-4 3v61l3 6 3 5 2-3 3-6zm127-43a1421 1421 0 0 0 21-75l-17 9-17
         8v71l6-6 7-7zM38 68V33l-16-8-16-8 9 36 9 37 7 7 7 6V68z" />
         </svg>
-        <h1 class="text-[14vw] font-[norse-bold] cursor-pointer"><a href="#main">The Odin Project</a></h1>
+        <h1 class="text-[14vw] font-[norse-bold] text-center
+        lg:text-[6vw]"><a class="lg:cursor-default" href="#main">The Odin Project</a></h1>
     </header>
-    <main id="main" class="h-[200vh] flex flex-col">
+    <main id="main" class="h-[200vh] flex flex-col lg:h-[90vh]">
         <div class="h-full w-3/4 flex flex-col justify-evenly self-center">
-            <div class="h-screen text-[7vw] text-center flex flex-col
-            justify-evenly select-none">
+            <div class="h-screen text-main text-center flex flex-col
+            justify-evenly select-none lg:text-desktopMain lg:h-[40%]">
                 <p>
                     Ever wanted to become a programmer and dine in
                     valhalla!?<br>
@@ -59,12 +62,15 @@
                 <p>
                     What are you waiting
                     for?<br>Join the ranks <a href="#formContainer"
-                        class="italic text-[#970076] cursor-pointer dark:text-[#ff46d7]">now.</a>
+                    class="italic text-[#970076] cursor-pointer
+                    dark:text-[#ff46d7] lg:cursor-default">now.</a>
                 </p>
             </div>
-            <div id="formContainer" class="h-screen flex flex-col justify-around">
+            <div id="formContainer" class="h-screen flex flex-col justify-around
+            lg:h-[60%]">
                 <form class="h-full py-8 flex flex-col justify-between items-center
-                text-[2.8vw]" id="form" method="post" action="#" novalidate>
+                text-form lg:text-desktopForm lg:flex-row lg:flex-wrap
+                lg:flex-grow lg:gap-4 lg:justify-evenly lg:pt-0" id="form" method="post" action="#" novalidate>
                     <label class="label">FIRST NAME
                         <input class="input inputValid" type="text" id="firstName" name="firstName" placeholder=" "
                             required>
@@ -92,20 +98,28 @@
                     <label class="label">CONFIRM PASSWORD
                         <input class="input inputValid" type="password" id="confirmPassword" name="confirmPassword"
                             minlength="8" placeholder=" " required>
-                        <p class="text-[2.6vw] text-[#970076] dark:text-[#ff46d7] inline-block" id="passwordErrorLength">Minimum 8 characters</p>
-                        <p class="text-[2.6vw] text-[#970076] dark:text-[#ff46d7]" id="passwordErrorMatch">Password must match</p>
+                        <p class="text-form text-[#970076] dark:text-[#ff46d7]
+                        inline-block lg:text-desktopForm lg:absolute" id="passwordErrorLength">Minimum 8
+                        characters</p>
+                        <p class="text-form text-[#970076] dark:text-[#ff46d7]
+                        lg:text-desktopForm lg:absolute lg:translate-y-4" id="passwordErrorMatch">Password
+                        must match</p>
                     </label>
-                    <button class="h-[3.4vh] w-[24vw] select-none bg-slate-900 rounded
-                    text-white text-[3vw] dark:bg-[#f8f8ff] dark:text-black">Join!</button>
-                    <p class="text-center text-[2vw]">Already have an account? Login
-                        <a class="text-[#970076] cursor-pointer dark:text-[#ff46d7]" href="#formContainer">here.</a>
-                    </p>
+                    <div class="h-[15%] flex flex-col justify-between items-center">
+                        <button class="h-[3.4vh] w-[24vw] align-middle select-none bg-slate-900 rounded
+                        text-white text-[3vw] dark:bg-[#f8f8ff] dark:text-black
+                        lg:w-[8vw] lg:text-desktopForm">Join!</button>
+                        <p class="text-center text-form lg:text-desktopForm">Already have an account? Login
+                            <a class="text-[#970076] cursor-pointer dark:text-[#ff46d7]" href="#formContainer">here.</a>
+                        </p>
+                    </div>
                 </form>
             </div>
         </div>
     </main>
-    <footer class="h-[10vh] flex justify-center items-center text-white
-    text-[3.4vw] bg-slate-900 dark:bg-[#f8f8ff] dark:text-black">
+    <footer class="h-[10vh] text-center flex justify-center items-center text-white
+    text-[3.4vw] bg-slate-900 dark:bg-[#f8f8ff] dark:text-black lg:absolute
+    lg:bottom-0 lg:w-full lg:text-[2.4vw]">
         <p>Copyright &#169; 865 Valhalla. All rights drank.</p>
     </footer>
 
