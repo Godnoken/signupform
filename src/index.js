@@ -5,6 +5,7 @@ const confirmPassword = document.querySelector("#confirmPassword");
 const passwordInputs = Array.from([password, confirmPassword]);
 const passwordErrorLength = document.querySelector("#passwordErrorLength");
 const passwordErrorMatch = document.querySelector("#passwordErrorMatch");
+const darkLightSwitch = document.querySelector("#darkLightSwitch");
 
 // Prevents mobile layout from breaking on input focus. Layout breaks because of
 // using vh on containers.
@@ -16,6 +17,7 @@ formInputs.forEach(input => input.addEventListener("change", validateOnChange));
 formInputs.forEach(input => input.addEventListener("input", validateOnInput));
 passwordInputs.forEach(input => input.addEventListener("input", validatePasswordOnInput));
 passwordInputs.forEach(input => input.addEventListener("change", validatePasswordOnChange));
+darkLightSwitch.addEventListener("click", switchPreferenceMode);
 
 
 function validateForm(event) {
@@ -112,4 +114,12 @@ function validatePasswordOnChange() {
             passwordErrorMatch.classList.add("text-green-600");
         }
     }
+}
+
+
+function switchPreferenceMode() {
+    const html = document.documentElement;
+
+    if (html.classList.contains("dark")) html.classList.toggle("dark");
+    else html.classList.toggle("dark");
 }

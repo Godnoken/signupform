@@ -16,7 +16,7 @@
     }
 
     .label {
-        @apply w-2/3 mb-8
+        @apply w-2/3 mb-8 select-none
     }
 
     .error {
