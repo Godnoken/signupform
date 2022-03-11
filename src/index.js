@@ -6,7 +6,8 @@ const passwordInputs = Array.from([password, confirmPassword]);
 const passwordErrorLength = document.querySelector("#passwordErrorLength");
 const passwordErrorMatch = document.querySelector("#passwordErrorMatch");
 
-
+// Prevents mobile layout from breaking on input focus. Layout breaks because of
+// using vh on containers.
 const viewport = document.querySelector("meta[name=viewport]");
 viewport.setAttribute("content", viewport.content + ", height=" + window.innerHeight);
 
