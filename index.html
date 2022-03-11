@@ -12,10 +12,10 @@
     <script src="src/index.js" defer></script>
 </head>
 
-<body class="bg-[#f8f8ff] font-mono dark:bg-black dark:text-white
+<body class="bg-[#f8f8ff] font-mono dark:bg-black dark:text-white select-none
 transition-colors duration-300 lg:flex">
-    <svg class="fixed w-[6vw] h-[6vw] right-3 top-3 cursor-pointer
-    hover:fill-stone-500 dark:fill-[#f8f8ff] dark:hover:fill-[#d1d1d1]" id="darkLightSwitch"
+    <svg class="fixed w-[6vw] translate-y-3 translate-x-3 cursor-pointer transition-colors duration-300
+    hover:fill-[#970076] dark:fill-[#f8f8ff] dark:hover:fill-[#ff46d7] lg:w-[4vw]" id="darkLightSwitch"
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 472.1 472.1"
     style="enable-background:new 0 0 472.082 472.082" xml:space="preserve"><path
     d="M236 127a109 109 0 1 0 0 219 109 109 0 0 0 0-219zm0 188a79 79 0 1 1 0-158
@@ -26,7 +26,7 @@ transition-colors duration-300 lg:flex">
     25-25-75c11-17 19-36 24-57zM236 375a139 139 0 1 1 0-279 139 139 0 0 1 0
     279z"/></svg>
     <header class="h-screen flex flex-col items-center justify-evenly
-    select-none lg:w-full lg:h-[90vh]">
+     lg:w-full lg:h-[90vh]">
         <svg class="w-1/2 fill-black dark:fill-[#f8f8ff]" viewBox="0 0 210 297" xmlns="http://www.w3.org/2000/svg">
             <path style="stroke-width:.548113" d="m82 277-21-11 1-3
         1-2-11-8c-11-8-11-7-10-13l1-3-10-21-10-22 8-30 7-30v-23l-9-9-9-9-10-39L0
@@ -53,7 +53,7 @@ transition-colors duration-300 lg:flex">
     <main id="main" class="h-[200vh] flex flex-col lg:h-[90vh]">
         <div class="h-full w-3/4 flex flex-col justify-evenly self-center">
             <div class="h-screen text-main text-center flex flex-col
-            justify-evenly select-none lg:text-desktopMain lg:h-[40%]">
+            justify-evenly  lg:text-desktopMain lg:h-[40%]">
                 <p>
                     Ever wanted to become a programmer and dine in
                     valhalla!?<br>
@@ -106,8 +106,11 @@ transition-colors duration-300 lg:flex">
                         must match</p>
                     </label>
                     <div class="h-[15%] flex flex-col justify-between items-center">
-                        <button class="h-[3.4vh] w-[24vw] align-middle select-none bg-slate-900 rounded
-                        text-white text-[3vw] dark:bg-[#f8f8ff] dark:text-black
+                        <button class="h-[3.4vh] w-[24vw] align-middle
+                        
+                        transition-colors duration-300 bg-slate-900 rounded
+                        text-white text-form hover:bg-[#970076] dark:bg-[#f8f8ff] dark:text-black
+                        dark:hover:bg-[#ff46d7]
                         lg:w-[8vw] lg:text-desktopForm">Join!</button>
                         <p class="text-center text-form lg:text-desktopForm">Already have an account? Login
                             <a class="text-[#970076] cursor-pointer dark:text-[#ff46d7]" href="#formContainer">here.</a>
@@ -119,7 +122,7 @@ transition-colors duration-300 lg:flex">
     </main>
     <footer class="h-[10vh] text-center flex justify-center items-center text-white
     text-[3.4vw] bg-slate-900 dark:bg-[#f8f8ff] dark:text-black lg:absolute
-    lg:bottom-0 lg:w-full lg:text-[2.4vw]">
+    lg:bottom-0 lg:w-full lg:text-[2.4vw] transition-colors duration-300">
         <p>Copyright &#169; 865 Valhalla. All rights drank.</p>
     </footer>
 
