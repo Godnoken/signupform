@@ -12,34 +12,14 @@
     .input {
         @apply mt-0 block h-[3.8vh] w-full px-0.5 border-0 border-b-2 border-[#d1d1d1]
         focus:ring-0 bg-[#f8f8ff] text-[#970076] focus:border-[#970076] dark:text-[#ff46d7] dark:focus:border-[#ff46d7]
-        dark:bg-black;
+        dark:bg-black transition-shadow duration-300
     }
 
     .label {
-        @apply w-2/3 mb-8
+        @apply w-2/3 mb-8 select-none
     }
 
     .error {
         @apply text-red-600 text-[2.6vw] h-0
-    }
-}
-
-@media (prefers-color-scheme: light) {
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover, 
-    input:-webkit-autofill:focus, 
-    input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px #f8f8ff inset;
-    -webkit-text-fill-color: #970076;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover, 
-    input:-webkit-autofill:focus, 
-    input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px black inset;
-    -webkit-text-fill-color: #ff46d7;
     }
 }
