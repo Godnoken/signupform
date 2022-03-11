@@ -10,16 +10,16 @@
 
 @layer components {
     .input {
-        @apply mt-0 block h-[3.8vh] w-full px-0.5 border-0 border-b-2 border-[#d1d1d1]
+        @apply mt-0 block h-[3.8vh] w-full text-form px-0.5 border-0 border-b-2 border-[#d1d1d1]
         focus:ring-0 bg-[#f8f8ff] text-[#970076] focus:border-[#970076] dark:text-[#ff46d7] dark:focus:border-[#ff46d7]
         dark:bg-black transition-shadow duration-300
     }
 
     .label {
-        @apply w-2/3 mb-8 select-none
+        @apply w-2/3 mb-8 select-none lg:mb-4 lg:w-[20vw]
     }
 
     .error {
-        @apply text-red-600 text-[2.6vw] h-0
+        @apply text-red-600 text-formError h-0
     }
 }
