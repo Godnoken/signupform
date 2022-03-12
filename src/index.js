@@ -30,12 +30,10 @@ function validateForm(event) {
 
         nonPasswordInputs.forEach(input => {
             if (input.checkValidity()) {
-                input.classList.add("border-green-600");
-                input.classList.remove("border-red-600");
+                input.style.borderColor = "#16A34A";
             }
             else {
-                input.classList.add("border-red-600");
-                input.classList.remove("border-green-600");
+                input.style.borderColor = "#DC2626";
                 input.nextElementSibling.classList.add("visible");
                 input.nextElementSibling.classList.remove("invisible");
             }
@@ -53,8 +51,7 @@ function validateOnInput(event) {
     const errorMessage = targetInput.nextElementSibling;
 
     if (targetInput.checkValidity()) {
-        targetInput.classList.add("border-green-600");
-        targetInput.classList.remove("border-red-600");
+        targetInput.style.borderColor = "#16A34A";
         errorMessage.classList.add("invisible");
         errorMessage.classList.remove("visible");
     }
@@ -66,8 +63,7 @@ function validateOnChange(event) {
     const errorMessage = targetInput.nextElementSibling;
 
     if (!targetInput.checkValidity()) {
-        targetInput.classList.add("border-red-600");
-        targetInput.classList.remove("border-green-600");
+        targetInput.style.borderColor = "#DC2626";
         errorMessage.classList.add("visible");
         errorMessage.classList.remove("invisible");
     }
@@ -76,10 +72,8 @@ function validateOnChange(event) {
 
 function validatePasswordOnInput() {
     if (password.value === confirmPassword.value && password.value.length >= 8) {
-        password.classList.add("border-green-600");
-        confirmPassword.classList.add("border-green-600");
-        password.classList.remove("border-red-600");
-        confirmPassword.classList.remove("border-red-600");
+        password.style.borderColor = "#16A34A";
+        confirmPassword.style.borderColor = "#16A34A";
         passwordErrorLength.style.color = "#16A34A";
         passwordErrorMatch.style.color = "#16A34A";
         return true;
@@ -95,10 +89,8 @@ function validatePasswordOnInput() {
 
 function validatePasswordOnChange() {
     if (password.value !== confirmPassword.value || password.value.length < 8) {
-        password.classList.add("border-red-600");
-        confirmPassword.classList.add("border-red-600");
-        password.classList.remove("border-green-600");
-        confirmPassword.classList.remove("border-green-600");
+        password.style.borderColor = "#DC2626";
+        confirmPassword.style.borderColor = "#DC2626";
         passwordErrorLength.style.color = "#DC2626";
         passwordErrorMatch.style.color = "#DC2626";
 
