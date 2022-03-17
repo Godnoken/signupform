@@ -12,6 +12,7 @@ HTML, CSS, TailwindCSS, JavaScript.
 Form validation.<br>
 Positive and negative responses to input validation, following the passive/aggressive rules of proper validation response to user.<br>
 Fully responsive with mobile and tablet/desktop layouts.
+Dark/light mode
 
 ## What did I learn?
 How to properly give users the notion that they are filling in a form right or wrong.<br>
