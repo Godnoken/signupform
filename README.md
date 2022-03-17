@@ -1,6 +1,6 @@
 # Sign up form for *fake* The Odin Project
 
-![gif showing sign up form webpage](https://github.com/Godnoken/gifdemos/blob/main/signupform.gif)
+![gif showing sign up form webpage](https://raw.githubusercontent.com/Godnoken/gifdemos/main/signupform.gif)
 
 ### Live
 https://godnoken.github.io/signupform/
