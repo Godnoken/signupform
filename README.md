@@ -6,7 +6,7 @@
 https://godnoken.github.io/signupform/
 
 ## Techs used
-HTML, CSS, TailwindCSS JavaScript.
+HTML, CSS, TailwindCSS, JavaScript.
 
 ## Features
 Form validation.<br>
